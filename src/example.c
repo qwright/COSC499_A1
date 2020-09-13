@@ -48,7 +48,7 @@ int subtract(int num1, int num2)
 void usage(void)
 {
 	printf("Usage:\n");
-	printf("-<mode>\n");
+	printf("-m <mode>\n");
 	printf("Modes available: sum, sub\n");
 }
 
