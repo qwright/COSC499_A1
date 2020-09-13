@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <string.h>
 #include "example.h"
+#include "test_example.h"
 
 
 int main(int argc, char *argv[])
@@ -10,7 +11,7 @@ int main(int argc, char *argv[])
 	int b = -1;
 	int ans = -1;
 	int opt;
-	while((opt = getopt(argc, argv, "m:")) != -1){
+	while((opt = getopt(argc, argv, "m:t")) != -1){
 	switch(opt){
 		case 'm':
 			if(strcmp(optarg, "sum") == 0){
@@ -26,6 +27,9 @@ int main(int argc, char *argv[])
 			else{
 				usage();
 			}
+			break;
+		case 't':
+			test_example();
 			break;
 		default:
 			usage();
@@ -60,4 +64,40 @@ void prompt(int *n1, int *n2)
 	printf("Enter second number:\n");
 	scanf("%d", n2);
 
+}
+
+void test_example(void)
+{
+	printf("testing sum:\n");
+	if(sum(0,0)==0){
+		printf("Test 1: Pass\n");
+	}else{
+		printf("Test 1: Fail\n");
+	}
+	if(sum(0,1)==1){
+		printf("Test 2: Pass\n");
+	}else{
+		printf("Test 2: Fail\n");
+	}
+	if(sum(-1,1)==0){
+		printf("Test 3: Pass\n");
+	}else{
+		printf("Test 3: Fail\n");
+	}
+	printf("testing sub:\n");
+	if(subtract(0,0)==0){
+		printf("Test 1: Pass\n");
+	}else{
+		printf("Test 1: Fail\n");
+	}
+	if(subtract(1,0)==1){
+		printf("Test 2: Pass\n");
+	}else{
+		printf("Test 2: Fail\n");
+	}
+	if(subtract(-1,1)== -2){
+		printf("Test 3: Pass\n");
+	}else{
+		printf("Test 3: Fail\n");
+	}
 }
