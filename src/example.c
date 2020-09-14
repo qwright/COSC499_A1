@@ -7,6 +7,7 @@
 
 int main(int argc, char *argv[])
 {
+	printf("Hello Capstone");
 	int a = -1;
 	int b = -1;
 	int ans = -1;
